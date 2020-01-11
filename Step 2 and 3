@@ -1,0 +1,11 @@
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
+ct = ColumnTransformer([('encoder',OneHotEncoder(),[3])],remainder = 'passthrough')
+x = np.array(ct.fit_transform(x),dtype= np.float)
+
+x = x[:,1:]
+
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train, y_test = train_test_split(x,y,random_state = 0,test_size=0.2)
