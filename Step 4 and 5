@@ -1,0 +1,10 @@
+from sklearn.linear_model import LinearRegression
+
+regress = LinearRegression()
+regress.fit(x_train,y_train)
+
+y_predict = regress.predict(x_test)
+
+import statsmodels.formula.api as sm
+
+x = np.append(arr=np.ones((50,1)).astype(int),values=x,axis=1)
